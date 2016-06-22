@@ -4,6 +4,6 @@ public class VeryIntelligentLanguageSystem {
     private static String shortName = "VILS";
 
     public static void main(String[] args){
-	System.out.println("Hello, my name is " + name + " how can I be of service.");
+	System.out.println("Hello, my name is " + name + "(" + fullName + "), but you can call me " + shortName + ", how can I be of service.");
     }
 }
