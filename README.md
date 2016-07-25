@@ -5,7 +5,7 @@ Short for _Very Intelligent Language System_
 ## About
 
 VILS was created and inspired by JARVIS.
-But also I wanted to make a cool and complex Java application.
+But I also wanted to make a cool and complex Java application.
 
 This is version 2.0.0, version 1.0.0 was operational and it turned out really good
 but unfortunetely I had an accident with my Windows OS and the project code was lost.
