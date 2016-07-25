@@ -1,6 +1,6 @@
 # VILS
 
-Short for <Very Intelligent Language System>
+Short for _Very Intelligent Language System_
 
 ## About
 
