@@ -4,6 +4,9 @@ import java.net.MalformedURLException;
 import java.io.IOException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 public class HttpConnection {
     private String mDomain;
@@ -14,7 +17,7 @@ public class HttpConnection {
     public HttpConnection(String domain, String path){
         mDomain = domain;
         setPath(path);
-        
+
         constructUrl();
         connect();
     }
@@ -28,7 +31,7 @@ public class HttpConnection {
 
     public void goTo(String path){
         setPath(path);
-        
+
         constructUrl();
         connect();
     }
@@ -44,6 +47,26 @@ public class HttpConnection {
 
         constructUrl();
         connect();
+    }
+
+    public String getContent(){
+      try {
+        mConnection.connect();
+
+        String content = "", line;
+        BufferedReader br = new BufferedReader(new InputStreamReader(mConnection.getInputStream()));
+        do {
+          line = br.readLine();
+          if(line != null)
+            content += line + "\n";
+        } while(line != null);
+
+        return content;
+      } catch(IOException e){
+        e.printStackTrace();
+      }
+
+      return "Exception occured while reading the page.";
     }
 
     private void setPath(String path){
